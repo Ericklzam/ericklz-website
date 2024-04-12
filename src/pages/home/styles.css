@@ -1,5 +1,9 @@
 .Body {
     background: linear-gradient(to bottom, #000000, #181225, #4A0F58, #580F32);
+    height: '100%'; 
+    padding-left: '170px'; 
+    padding-right:'170px'; 
+    padding-top: '50px';
 }
 
 .vertical-line {
@@ -21,4 +25,41 @@
   
 .list-item:hover {
     font-size: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Three columns */
+    grid-template-rows: 35vh 35vh; /* Two rows */
+    grid-gap: 10px; /* Margin between items */
+    max-width: 100%; /* Set maximum width for the gallery */
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative; /* Ensure images are positioned correctly */
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%; /* Make images fill the entire space of their container */
+    height: 100%; /* Make images fill the entire space of their container */
+    object-fit: cover; /* Ensure images maintain their aspect ratio */
+}
+
+.item1 {
+    grid-row: span 2; /* Span two rows */
+    grid-column: span 1; /* Span one column */
+}
+
+.item3,
+.item4 {
+    grid-row: span 1; /* Span one row */
+    grid-column: span 2; /* Span one column */
+}
+
+.item2,
+.item5 {
+    grid-row: span 1; /* Span one row */
+    grid-column: span 1; /* Span one column */
 }

@@ -5,13 +5,22 @@ import { ThemeProvider } from '@mui/material/styles';
 import darkTheme from '../../theme';
 import CustomAppBar from '../../components/layout/AppBar';
 import CustomBottomBar from '../../components/layout/BottomBar';
-import PatterIcon from '../../assets/svg/PatternIcon'
-import PortraitPhoto from '../../assets/img/PortraitPhoto.jpg'
+import PatterIcon from '../../assets/svg/PatternIcon';
+import PortraitPhoto from '../../assets/img/PortraitPhoto.jpg';
+import Wero from '../../assets/img/Wero.jpg';
+import Austin from '../../assets/img/Austin.jpg';
+import Church from '../../assets/img/Church.jpg';
+import CDMX from '../../assets/img/CDMX.jpg';
+import Jellyfish from '../../assets/img/Jellyfish.jpg'
 import { LinkedIn, GitHub } from '@mui/icons-material';
 import './styles.css';
 
 const IndexHome = () => {
     const navigate = useNavigate();
+
+    const handleNavigation = (path) => {
+        navigate(path); // Navigate to the specified path
+    };
 
     return <>
     <ThemeProvider theme={darkTheme}>
@@ -20,7 +29,7 @@ const IndexHome = () => {
                 <div className='Body' style={{height: '100%', paddingLeft: '170px', paddingRight:'170px', paddingTop: '50px'}}>
                 <Grid container direction='column' alignItems={'space-between'}>
                     {/*FIRST SECTION */}
-                    <Grid container direction='row' alignItems={'space-between'}>
+                    <Grid container direction='row' alignItems={'space-between'} >
                         <Grid item container direction="column" spacing={7} xs={1}>
                             <Grid item xs={2}>
                                 <Typography variant="h6" className="list-item">Home</Typography>
@@ -29,10 +38,10 @@ const IndexHome = () => {
                                 <Typography variant="h6" className="list-item">Resume</Typography>
                             </Grid>
                             <Grid item xs={2}>
-                                <Typography variant="h6" className="list-item">Blog</Typography>
+                                <Typography variant="h6" className="list-item" onClick={() => handleNavigation('/blog')}>Blog</Typography>
                             </Grid>
                             <Grid item xs={2}>
-                                <Typography variant="h6" className="list-item">Contact</Typography>
+                                <Typography variant="h6" className="list-item" onClick={() => handleNavigation('/contact')}>Contact</Typography>
                             </Grid>
                         </Grid>
                         <Grid item xs={10} justifyContent={'center'} textAlign={'center'}>
@@ -55,7 +64,7 @@ const IndexHome = () => {
                         </Grid>
                     </Grid>
                     {/*SECOND SECTION */}
-                    <Typography xs={12} fontWeight={'bold'} variant='h6' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
+                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
                         Hi!
                     </Typography>
                     <Grid container direction="row">
@@ -73,10 +82,10 @@ const IndexHome = () => {
                     </Grid>
                     {/*THIRD SECTION */}
                     <Grid container direction="row" justifyContent={'space-around'}>
-                    <Typography xs={12} fontWeight={'bold'} variant='h6' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
+                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
                         Skills
                     </Typography>
-                    <Typography xs={12} fontWeight={'bold'} variant='h6' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
+                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
                         Interests / Hobbies
                     </Typography>
                     </Grid>
@@ -84,9 +93,29 @@ const IndexHome = () => {
                         <div className="vertical-line2"></div>
                     </Grid>
                     {/*FOURTH SECTION */}
-                    <Typography xs={12} fontWeight={'bold'} variant='h6' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
+                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '100px'}}>
                         Some Multimedia Content
                     </Typography>
+                    <Grid style={{marginBottom:'50px', marginTop:'50px'}}>
+                    <div className="gallery">
+                    <div className="gallery-item item1">
+                    <img src={Austin} alt="Image 1" />
+                    </div>
+                    <div className="gallery-item item2">
+                    <img src={Wero} alt="Image 2" />
+                    </div>
+                    <div className="gallery-item item3">
+                    <img src={CDMX} alt="Image 3" />
+                    </div>
+                    <div className="gallery-item item4">
+                    <img src={Church} alt="Image 4" />
+                    </div>
+                    <div className="gallery-item item5">
+                    <img src={Jellyfish} alt="Image 5" />
+                    </div>
+                    {/* Add more gallery items as needed */}
+                    </div>
+                    </Grid>
                 </Grid>
                 </div>
                 {/*LAST SECTION */}

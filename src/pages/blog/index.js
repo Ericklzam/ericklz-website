@@ -14,18 +14,9 @@ const IndexBlog = () => {
         <div className='Body' style={{height: '90vh', paddingLeft: '170px', paddingRight:'170px', paddingTop: '50px'}}>
         <Grid item xs={2} sx={{ minWidth: '200px' }}>
         <Grid container direction="column" spacing={7}>
-        <Grid item xs={4}>
-            <Typography variant="h6" className="list-item">Home</Typography>
-        </Grid>
-        <Grid item>
-            <Typography variant="h6" className="list-item">Resume</Typography>
-        </Grid>
-        <Grid item>
-            <Typography variant="h6" className="list-item">Blog</Typography>
-        </Grid>
-        <Grid item>
-            <Typography variant="h6" className="list-item">Contact</Typography>
-        </Grid>
+        <Typography xs={12} fontWeight={'bold'} variant='h4' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
+            Posts
+        </Typography>
         </Grid>
         </Grid>
         </div>
