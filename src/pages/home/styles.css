@@ -1,0 +1,24 @@
+.Body {
+    background: linear-gradient(to bottom, #000000, #181225, #4A0F58, #580F32);
+}
+
+.vertical-line {
+    border-left: 1px solid white; 
+    height: 150px;
+}
+
+.vertical-line2 {
+    border-left: 1px solid white; 
+    height: 300px;
+}
+
+.list-item {
+    cursor: pointer;
+    transition: font-size 0.2s;
+    color: white;
+    font-weight: bold;
+}
+  
+.list-item:hover {
+    font-size: 30px;
+}
