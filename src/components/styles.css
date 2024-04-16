@@ -42,3 +42,8 @@
     width: 300px;
     margin-top: 10px;
 }
+
+.vertical-line {
+    border-left: 1px solid white; 
+    height: 100px;
+}

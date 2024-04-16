@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Grid, Typography, AppBar, Toolbar, useMediaQuery, IconButton, TextField, Box, Avatar} from '@mui/material';
 import { useNavigate } from "react-router-dom";
-import './styles.css';
+import '../styles.css';
 import EMLZ from '../../assets/img/EM LZ.png'
 import { LinkedIn, GitHub } from '@mui/icons-material';
 

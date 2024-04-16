@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Grid, Typography, AppBar, Toolbar, useMediaQuery, IconButton, TextField, Box, Avatar} from '@mui/material';
 import {ArrowBackIos, Person} from '@mui/icons-material';
 import SearchIcon from '@mui/icons-material/Search';
-import './styles.css';
+import '../styles.css';
 import EMLZ from '../../assets/img/EM LZ.png'
 import MenuIcon from '@mui/icons-material/Menu';
 

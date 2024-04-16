@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Grid, Typography, IconButton} from '@mui/material';
+import {Grid, Typography, IconButton, Button, TextField} from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import { ThemeProvider } from '@mui/material/styles';
 import darkTheme from '../../theme';
@@ -13,14 +13,23 @@ import Church from '../../assets/img/Church.jpg';
 import CDMX from '../../assets/img/CDMX.jpg';
 import Jellyfish from '../../assets/img/Jellyfish.jpg'
 import { LinkedIn, GitHub } from '@mui/icons-material';
+import ItemButton from '../../components/buttons/itemButton'
 import './styles.css';
+import ResumeDialog from '../../components/dialogs/ResumeDialog';
+import InDialog from '../../components/dialogs/SignLogInDialog';
 
 const IndexHome = () => {
     const navigate = useNavigate();
 
+    const [open, setOpen] = useState(false);
+
     const handleNavigation = (path) => {
         navigate(path); // Navigate to the specified path
     };
+
+    const handleOpen = () => {
+        setOpen(true);
+    }
 
     return <>
     <ThemeProvider theme={darkTheme}>
@@ -35,7 +44,7 @@ const IndexHome = () => {
                                 <Typography variant="h6" className="list-item">Home</Typography>
                             </Grid>
                             <Grid item xs={2}>
-                                <Typography variant="h6" className="list-item">Resume</Typography>
+                                <Typography variant="h6" className="list-item" onClick={() => handleOpen()}>Resume</Typography>
                             </Grid>
                             <Grid item xs={2}>
                                 <Typography variant="h6" className="list-item" onClick={() => handleNavigation('/blog')}>Blog</Typography>
@@ -81,37 +90,89 @@ const IndexHome = () => {
                         </Grid>
                     </Grid>
                     {/*THIRD SECTION */}
-                    <Grid container direction="row" justifyContent={'space-around'}>
-                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
-                        Skills
-                    </Typography>
-                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
-                        Interests / Hobbies
-                    </Typography>
+                    <Grid container direction="row" justifyContent={'space-around'} marginTop={'100px'}>
+                        <Grid item container direction="column" xs={5}>
+                            <Typography fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginBottom: '40px'}}>
+                            Skills
+                            </Typography>
+                            <Grid item container direction="row" justifyContent={'center'}>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'JavaScript'}/>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'Java'}/>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'C#'}/>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'C++'}/>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'Phyton'}/>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'Swift'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'VBA'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'VB.NET'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'PHP'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'MySQL'}/>
+
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'Agile Development & SCRUM'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'User-first Design'}/>
+
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'React.js'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'Angular.js'}/>
+
+                                <ItemButton buttonColor={'#2A014B'} buttonHover={'#230039'} text={'MEAN'}/>
+                                <ItemButton buttonColor={'#35014B'} buttonHover={'#2A013C'} text={'LAMP'}/>
+
+                                <ItemButton buttonColor={'#35014B'} buttonHover={'#2A013C'} text={'Command Line'}/>
+                                <ItemButton buttonColor={'#41014B'} buttonHover={'#300038'} text={'GIT & TFS'}/>
+                            </Grid>
+                        </Grid>
+                        <Grid item container xs={2} justifyContent={'center'} alignContent={'center'} marginTop={'40px'}>
+                            <div className="vertical-line2"></div>
+                        </Grid>
+                        <Grid item container direction="column" xs={5}>
+                            <Typography fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginBottom: '40px'}}>
+                            Interests / Hobbies
+                            </Typography>
+                            <Grid item container direction="row" justifyContent={'center'}>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'Music Production'}/>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'Bass Guitar'}/>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'Guitar'}/>
+                                <ItemButton buttonColor={'#110231'} buttonHover={'#09011C'} text={'Ukulele'}/>
+                                
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'Deftones'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'Sketching / Drawing'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'Batman'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'One Piece'}/>
+
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'BLAME! Manga'}/>
+                                
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'Coffee'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'Mojitos'}/>
+                                <ItemButton buttonColor={'#22014A'} buttonHover={'#190135'} text={'Clamatos'}/>
+
+                                <ItemButton buttonColor={'#2A014B'} buttonHover={'#230039'} text={'H.P. Lovecraft'}/>
+                                <ItemButton buttonColor={'#35014B'} buttonHover={'#2A013C'} text={'義 - 勇 - 仁 - 礼 - 誠 - 名誉 - 忠義'}/>
+
+                                <ItemButton buttonColor={'#35014B'} buttonHover={'#2A013C'} text={'Philosophy'}/>
+                                <ItemButton buttonColor={'#41014B'} buttonHover={'#300038'} text={'Theology'}/>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                    <Grid container direction="row" justifyContent={'space-around'}>
-                        <div className="vertical-line2"></div>
-                    </Grid>
+                    
                     {/*FOURTH SECTION */}
-                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '100px'}}>
+                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '80px'}}>
                         Some Multimedia Content
                     </Typography>
                     <Grid style={{marginBottom:'50px', marginTop:'50px'}}>
                     <div className="gallery">
                     <div className="gallery-item item1">
-                    <img src={Austin} alt="Image 1" />
+                    <img src={Austin} alt="Austin" />
                     </div>
                     <div className="gallery-item item2">
-                    <img src={Wero} alt="Image 2" />
+                    <img src={Wero} alt="Wero" />
                     </div>
                     <div className="gallery-item item3">
-                    <img src={CDMX} alt="Image 3" />
+                    <img src={CDMX} alt="CDMX" />
                     </div>
                     <div className="gallery-item item4">
-                    <img src={Church} alt="Image 4" />
+                    <img src={Church} alt="Church" />
                     </div>
                     <div className="gallery-item item5">
-                    <img src={Jellyfish} alt="Image 5" />
+                    <img src={Jellyfish} alt="JellyFish" />
                     </div>
                     {/* Add more gallery items as needed */}
                     </div>
@@ -124,6 +185,8 @@ const IndexHome = () => {
                 </CustomBottomBar>
             </Grid>
         </ThemeProvider>
+        <ResumeDialog open={open} setOpen={setOpen}/>
+        <InDialog/>
     </>
 }
 export default IndexHome

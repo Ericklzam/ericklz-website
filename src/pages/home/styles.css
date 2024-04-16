@@ -13,7 +13,7 @@
 
 .vertical-line2 {
     border-left: 1px solid white; 
-    height: 300px;
+    height: 320px;
 }
 
 .list-item {
@@ -29,37 +29,37 @@
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Three columns */
-    grid-template-rows: 35vh 35vh; /* Two rows */
-    grid-gap: 10px; /* Margin between items */
-    max-width: 100%; /* Set maximum width for the gallery */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 35vh 35vh;
+    grid-gap: 10px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
 .gallery-item {
-    position: relative; /* Ensure images are positioned correctly */
+    position: relative; 
     overflow: hidden;
 }
 
 .gallery-item img {
-    width: 100%; /* Make images fill the entire space of their container */
-    height: 100%; /* Make images fill the entire space of their container */
-    object-fit: cover; /* Ensure images maintain their aspect ratio */
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
 }
 
 .item1 {
-    grid-row: span 2; /* Span two rows */
-    grid-column: span 1; /* Span one column */
+    grid-row: span 2; 
+    grid-column: span 1; 
 }
 
 .item3,
 .item4 {
-    grid-row: span 1; /* Span one row */
-    grid-column: span 2; /* Span one column */
+    grid-row: span 1;
+    grid-column: span 2;
 }
 
 .item2,
 .item5 {
-    grid-row: span 1; /* Span one row */
-    grid-column: span 1; /* Span one column */
+    grid-row: span 1; 
+    grid-column: span 1;
 }
