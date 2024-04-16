@@ -5,7 +5,7 @@ import '../styles.css';
 import EMLZ from '../../assets/img/EM LZ.png'
 import { LinkedIn, GitHub } from '@mui/icons-material';
 
-const CustomBottomBar = () => {
+const CustomBottomBar = ({scrollToTop, setOpen}) => {
     const navigate = useNavigate();
 
     const handleNavigation = (path) => {
@@ -13,7 +13,7 @@ const CustomBottomBar = () => {
     };
 
     return <>
-    <div className='BottomBar' style={{height: '100%', paddingLeft: '170px', paddingRight:'170px', paddingTop: '100px', paddingBottom: '50px'}}>
+    <div className='BottomBar' style={{height: '100%', paddingLeft: '170px', paddingRight:'170px', paddingTop: '70px', paddingBottom: '50px'}}>
     <Grid container direction="row" alignContent={'space-between'}>
     <Grid container direction="column" alignContent={'start'} xs={4}>
         <Grid item>
@@ -40,19 +40,19 @@ const CustomBottomBar = () => {
         <Typography fontWeight={'bold'} variant='h5' style={{color:'white'}}>Menu</Typography>
         </Grid>
         <Grid item xs={2}>
-            <Typography variant="body2" style={{color:'white'}}>Home</Typography>
+            <Typography variant="body2" style={{color:'white', cursor: 'pointer'}} onClick={()=>{scrollToTop()}}>Home</Typography>
             <div className="horizontal-line"/>
         </Grid>
         <Grid item xs={2}>
-            <Typography variant="body2" style={{color:'white'}}>Resume</Typography>
+            <Typography variant="body2" style={{color:'white', cursor: 'pointer'}} onClick={()=>{setOpen(true)}}>Resume</Typography>
             <div className="horizontal-line"/>
         </Grid>
         <Grid item xs={2}>
-            <Typography variant="body2" style={{color:'white'}} onClick={() => handleNavigation('/blog')}>Blog</Typography>
+            <Typography variant="body2" style={{color:'white', cursor: 'pointer'}} onClick={() => handleNavigation('/blog')}>Blog</Typography>
             <div className="horizontal-line"/>
         </Grid>
         <Grid item xs={2}>
-            <Typography variant="body2" style={{color:'white'}} onClick={() => handleNavigation('/contact')}>Contact</Typography>
+            <Typography variant="body2" style={{color:'white', cursor: 'pointer'}} onClick={() => handleNavigation('/contact')}>Contact</Typography>
             <div className="horizontal-line"/>
         </Grid>
     </Grid>

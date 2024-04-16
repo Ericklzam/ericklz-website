@@ -12,11 +12,10 @@ import Austin from '../../assets/img/Austin.jpg';
 import Church from '../../assets/img/Church.jpg';
 import CDMX from '../../assets/img/CDMX.jpg';
 import Jellyfish from '../../assets/img/Jellyfish.jpg'
-import { LinkedIn, GitHub } from '@mui/icons-material';
+import { LinkedIn, GitHub, KeyboardArrowUp } from '@mui/icons-material';
 import ItemButton from '../../components/buttons/itemButton'
 import './styles.css';
 import ResumeDialog from '../../components/dialogs/ResumeDialog';
-import InDialog from '../../components/dialogs/SignLogInDialog';
 
 const IndexHome = () => {
     const navigate = useNavigate();
@@ -31,14 +30,36 @@ const IndexHome = () => {
         setOpen(true);
     }
 
+    const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setShowButton(scrollTop > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
     return <>
     <ThemeProvider theme={darkTheme}>
             <Grid>
                 <CustomAppBar title={'Home'}/>
                 <div className='Body' style={{height: '100%', paddingLeft: '170px', paddingRight:'170px', paddingTop: '50px'}}>
-                <Grid container direction='column' alignItems={'space-between'}>
+                <Grid container direction='column'>
                     {/*FIRST SECTION */}
-                    <Grid container direction='row' alignItems={'space-between'} >
+                    <Grid container direction='row' alignItems={'start'} >
                         <Grid item container direction="column" spacing={7} xs={1}>
                             <Grid item xs={2}>
                                 <Typography variant="h6" className="list-item">Home</Typography>
@@ -180,13 +201,14 @@ const IndexHome = () => {
                 </Grid>
                 </div>
                 {/*LAST SECTION */}
-                <CustomBottomBar>
-
-                </CustomBottomBar>
+                <CustomBottomBar scrollToTop={scrollToTop} setOpen={setOpen}/>
             </Grid>
         </ThemeProvider>
         <ResumeDialog open={open} setOpen={setOpen}/>
-        <InDialog/>
+        {showButton && (
+        <button className="scroll-to-top-btn" onClick={()=>{scrollToTop()}}>
+          <KeyboardArrowUp/>
+        </button>)}
     </>
 }
 export default IndexHome

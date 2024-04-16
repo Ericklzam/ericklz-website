@@ -1,5 +1,5 @@
 .Body {
-    background: linear-gradient(to bottom, #000000, #181225, #4A0F58, #580F32);
+    background: linear-gradient(to bottom, #000000, #000000, #181225, #4A0F58, #580F32);
     height: '100%'; 
     padding-left: '170px'; 
     padding-right:'170px'; 
@@ -63,3 +63,15 @@
     grid-row: span 1; 
     grid-column: span 1;
 }
+
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
