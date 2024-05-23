@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {Grid, Typography, IconButton, Button, TextField} from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import { ThemeProvider } from '@mui/material/styles';
+import { useMediaQuery } from '@mui/material';
 import darkTheme from '../../theme';
 import CustomAppBar from '../../components/layout/AppBar';
 import CustomBottomBar from '../../components/layout/BottomBar';
-import PatterIcon from '../../assets/svg/PatternIcon';
+import PatternIcon from '../../assets/svg/PatternIcon';
 import PortraitPhoto from '../../assets/img/PortraitPhoto.jpg';
 import Wero from '../../assets/img/Wero.jpg';
 import Austin from '../../assets/img/Austin.jpg';
@@ -52,15 +53,20 @@ const IndexHome = () => {
     });
   };
 
+  const smallScreenBreakpoint = '(max-width: 768px)'; // Adjust the breakpoint as needed
+
+  // Check if the current screen size matches the small screen breakpoint
+  const isSmallScreen = useMediaQuery(smallScreenBreakpoint);
+
     return <>
     <ThemeProvider theme={darkTheme}>
-            <Grid>
+            <Grid style={{width: "100%"}}>
                 <CustomAppBar title={'Home'}/>
-                <div className='Body' style={{height: '100%', paddingLeft: '170px', paddingRight:'170px', paddingTop: '50px'}}>
+                <div className='Body' style={{height: "100%", paddingTop: 50}}>
                 <Grid container direction='column'>
                     {/*FIRST SECTION */}
                     <Grid container direction='row' alignItems={'start'} >
-                        <Grid item container direction="column" spacing={7} xs={1}>
+                        {isSmallScreen ? null : <Grid item container direction="column" spacing={8} xs={false} sm={1} md={1}>
                             <Grid item xs={2}>
                                 <Typography variant="h6" className="list-item">Home</Typography>
                             </Grid>
@@ -73,47 +79,55 @@ const IndexHome = () => {
                             <Grid item xs={2}>
                                 <Typography variant="h6" className="list-item" onClick={() => handleNavigation('/contact')}>Contact</Typography>
                             </Grid>
+                        </Grid>}
+                        <Grid item xs={12} sm={isSmallScreen ? 12 : 10} md={10} justifyContent={'center'} textAlign={'center'}>
+                            <div className="pattern-icon-container">
+                            <PatternIcon/>
+                            </div>
                         </Grid>
-                        <Grid item xs={10} justifyContent={'center'} textAlign={'center'}>
-                            <PatterIcon/> 
-                        </Grid>
-                        <Grid item container direction="column" spacing={1} xs={1} alignContent={'end'}>
-                        <Grid item alignSelf={'center'} marginBottom={'20px'}>
+                        {isSmallScreen ? null : <Grid item container direction="column" spacing={1} xs={false} sm={1} md={1} alignContent={'end'}>
+                        <Grid item alignSelf={'center'} marginBottom={5}>
                             <div className="vertical-line"/>
                         </Grid>
-                        <Grid item alignSelf={'center'} marginBottom={'20px'}>
+                        <Grid item alignSelf={'center'} marginBottom={5}>
                             <a href="https://github.com/Ericklzam" target="_blank" rel="noopener noreferrer">
                             <GitHub style={{ color: 'white' }}/>
                             </a>    
                         </Grid>
-                        <Grid item alignSelf={'center'} marginBottom={'20px'}>
+                        <Grid item alignSelf={'center'} marginBottom={5}>
                             <a href="https://www.linkedin.com/in/erickm-lopezzu/" target="_blank" rel="noopener noreferrer">
                             <LinkedIn style={{ color: 'white' }}/>
                             </a>
                         </Grid>
-                        </Grid>
+                        </Grid>}
                     </Grid>
                     {/*SECOND SECTION */}
-                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '100px', marginBottom: '40px'}}>
+                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: isSmallScreen ? 50 : 100, marginBottom: 40}}>
                         Hi!
                     </Typography>
-                    <Grid container direction="row">
-                        <Grid item xs={6}>
-                        <img src={PortraitPhoto} alt="Preview" style={{height: '350px',width: '550px',borderRadius: '5%',}}/>
-                        </Grid>
-                        <Grid item xs={6}>
-                        <Typography fontWeight={'regular'} variant='body1' style={{color:'white', marginLeft: '40px', marginTop:'200px'}}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc auctor enim non luctus maximus. 
-                        Suspendisse pellentesque dui id rhoncus porttitor. Quisque tortor nisl, aliquet eget diam sed, finibus consectetur turpis. 
-                        Praesent a accumsan felis. Quisque et porta augue. Maecenas commodo auctor leo eget tempor. 
-                        Proin in augue dapibus elit condimentum mollis.
+                    <Grid container direction="row" justifyContent="center" spacing={2}>
+
+                    <Grid item xs={12} sm={12} md={6} textAlign={'center'}>
+                        <img src={PortraitPhoto} alt="Preview" style={{ width: '100%', maxWidth: 550, height: 'auto', borderRadius: '5%' }} />
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={6}>
+                        <Typography fontWeight="regular" variant="body1" style={{ color: 'white', marginLeft: isSmallScreen ? 0 : 40, marginTop: 20,
+                    textAlign: isSmallScreen ? 'center' : 'start'}}>
+                        My name is Erick and I am a Software Developer, currently studying Computer Science at EPCC. Born and raised in 
+                        Ciudad Juarez, Chihuahua, Mexico. Currently what i am most focus on is in the field of 
+                        Front-End and Web-App Development, but in the future i want to specialize in the field of Data Analysis. If you want to
+                        check more about me, check out my social networks or blog posts.
+                        <br/><br/>
+                        I believe in people's pontential and hidden talents, sometimes we encase people's skills on what we thought they should
+                        have inside their jobs, associations, communities, not realizing that each person has a unique ability that has not fully
+                        develop yet, and we as colleagues is our job to help them to know their true pontential.
                         </Typography>
-                        </Grid>
+                    </Grid>
                     </Grid>
                     {/*THIRD SECTION */}
-                    <Grid container direction="row" justifyContent={'space-around'} marginTop={'100px'}>
+                    <Grid container direction={isSmallScreen ? "column" : "row"} justifyContent={'space-around'} marginTop={isSmallScreen ? 10 : 20} marginBottom={isSmallScreen ? 10 : 20}>
                         <Grid item container direction="column" xs={5}>
-                            <Typography fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginBottom: '40px'}}>
+                            <Typography fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginBottom: 10}}>
                             Skills
                             </Typography>
                             <Grid item container direction="row" justifyContent={'center'}>
@@ -141,11 +155,11 @@ const IndexHome = () => {
                                 <ItemButton buttonColor={'#41014B'} buttonHover={'#300038'} text={'GIT & TFS'}/>
                             </Grid>
                         </Grid>
-                        <Grid item container xs={2} justifyContent={'center'} alignContent={'center'} marginTop={'40px'}>
+                        {isSmallScreen ? null : <Grid item container xs={2} justifyContent={'center'} alignContent={'center'} marginTop={'40px'}>
                             <div className="vertical-line2"></div>
-                        </Grid>
-                        <Grid item container direction="column" xs={5}>
-                            <Typography fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginBottom: '40px'}}>
+                        </Grid>}
+                        <Grid item container direction="column" xs={5}  marginTop={isSmallScreen ? 10 : 0}>
+                            <Typography fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginBottom: isSmallScreen ? 10 : 20}}>
                             Interests / Hobbies
                             </Typography>
                             <Grid item container direction="row" justifyContent={'center'}>
@@ -175,10 +189,10 @@ const IndexHome = () => {
                     </Grid>
                     
                     {/*FOURTH SECTION */}
-                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center', marginTop: '80px'}}>
-                        Some Multimedia Content
+                    <Typography xs={12} fontWeight={'bold'} variant='h5' style={{color:'white', textAlign:'center'}}>
+                        Some Cool Photos I've Captured
                     </Typography>
-                    <Grid style={{marginBottom:'50px', marginTop:'50px'}}>
+                    <Grid style={{marginBottom:50, marginTop:50}}>
                     <div className="gallery">
                     <div className="gallery-item item1">
                     <img src={Austin} alt="Austin" />
