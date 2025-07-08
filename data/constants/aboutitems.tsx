@@ -1,0 +1,15 @@
+export const aboutItems = [
+    { name: "Music Production" },
+    { name: "Deftones" },
+    { name: "One Piece" },
+    { name: "Sketching / Drawing" },
+    { name: "Batman" },
+    { name: "Coffee" },
+    { name: "Mojitos" },
+    { name: "Clamatos" },
+    { name: "BLAME! Manga" },
+    { name: "義 - 勇 - 仁 - 礼 - 誠 - 名誉 - 忠義" },
+    { name: "H.P. Lovecraft" },
+    { name: "Philosophy" },
+    { name: "Theology" },
+  ];

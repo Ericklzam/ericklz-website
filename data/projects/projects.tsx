@@ -1,0 +1,156 @@
+export const projects = [
+    {
+        id:1,
+        title: "Making Of: Portfolio Website",
+        subtitle:"A quick overview of the process",
+        description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta sit amet metus sit amet commodo. Vestibulum consectetur auctor nunc, eu congue dolor vehicula ac. Nulla tortor erat, cursus in nisl eget, mattis blandit est.",
+        category: "Front-End",
+        date: "22/12/2025",
+        year:"2025",
+        image: "/img/website.jpg",
+        images:[
+            "/img/website.jpg","/img/website.jpg","/img/website.jpg"
+        ],
+        introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta sit amet metus sit amet commodo. Vestibulum consectetur auctor nunc, eu congue dolor vehicula ac. Nulla tortor erat, cursus in nisl eget, mattis blandit est. Maecenas vehicula sed est id iaculis. Sed tempor nulla id interdum pellentesque. Nam tristique ornare urna, id pharetra nisl.",
+        role:"Web Developer",
+        client: "Personal",
+        services: ["NextJs,Tailwind Css","Framer"],
+        problem:"",
+        approach:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam porta sit amet metus sit amet commodo. Vestibulum consectetur auctor nunc, eu congue dolor vehicula ac. Nulla tortor erat, cursus in nisl eget, mattis blandit est. Maecenas vehicula sed est id iaculis. Sed tempor nulla id interdum pellentesque. Nam tristique ornare urna, id pharetra nisl. Fusce vel urna massa. Aenean at libero scelerisque, cursus augue ut, lacinia lacus. Nulla tempor velit nulla, ultrices condimentum eros dapibus a.",
+        results:"Aliquam gravida accumsan neque, eu commodo turpis iaculis accumsan. Nullam eu leo non lectus vulputate vehicula. Sed in mollis turpis. Aenean maximus dictum turpis, in laoreet nulla imperdiet ac. Praesent eu turpis porttitor, sagittis erat quis, mollis nisl. Donec congue turpis ac ex rutrum, vehicula maximus neque egestas. Suspendisse volutpat id arcu sit amet blandit. Donec egestas, libero sit amet varius sodales, erat tortor blandit tortor, ut tincidunt lacus ligula at sem. Proin tristique lacus magna, eu vulputate ipsum tempus sit amet. Mauris felis nisi, congue id est vel, feugiat mattis quam.",
+        conclusion:"Vivamus ac mattis neque. Maecenas tincidunt posuere vehicula. Suspendisse malesuada interdum mi, et volutpat magna blandit congue. Vivamus a nulla facilisis, eleifend odio eget, pulvinar nisi. Nulla suscipit in urna vel egestas. Aliquam placerat, magna vel porttitor ultricies, dolor ex dictum ex, non cursus mauris erat nec purus. Sed pellentesque felis quis ipsum pellentesque, in ultricies dolor congue. Nam ut lacinia est. Proin at aliquam felis. Pellentesque finibus facilisis felis id molestie. Nam rutrum, purus ut suscipit suscipit, nunc enim finibus velit, sed blandit urna purus ut odio. Mauris sollicitudin euismod ex, non maximus nunc bibendum commodo. Vestibulum pharetra finibus urna, et commodo leo. In cursus arcu nec lacus convallis laoreet.",
+        repository:"https://github.com/Ericklzam/ericklz-website"
+    },
+    {
+        id:2,
+        title: "Pictura",
+        subtitle:"",
+        description : "Description",
+        category: "Category",
+        date: "22/12/2024",
+        year:"2025",
+        image: "/img/website.jpg",
+        images:[
+            "","",""
+        ],
+        introduction: "Introduction",
+        role:"Role",
+        client: "Client",
+        services: [],
+        problem: null,
+        approach:"",
+        results:"",
+        conclusion:"",
+        repository:""
+    },
+    {
+        id:3,
+        title: "Sentivo",
+        subtitle:"",
+        description : "Description",
+        category: "Category",
+        date: "22/12/2024",
+        year:"2025",
+        image: "/img/website.jpg",
+        images:[
+            "","",""
+        ],
+        introduction: "Introduction",
+        role:"Role",
+        client: "Client",
+        services: [],
+        problem:"",
+        approach:"",
+        results:"",
+        conclusion:"",
+        repository:""
+    },
+    {
+        id:4,
+        title: "Reverie",
+        subtitle:"",
+        description : "Description",
+        category: "Category",
+        date: "22/12/2024",
+        year:"2025",
+        image: "/img/website.jpg",
+        images:[
+            "","",""
+        ],
+        introduction: "Introduction",
+        role:"Role",
+        client: "Client",
+        services: [],
+        problem:"",
+        approach:"",
+        results:"",
+        conclusion:"",
+        repository:""
+    },
+    {
+        id:5,
+        title: "Tool Management",
+        subtitle:"",
+        description : "Description",
+        category: "Category",
+        date: "22/12/2024",
+        year:"2025",
+        image: "/img/website.jpg",
+        images:[
+            "","",""
+        ],
+        introduction: "Introduction",
+        role:"Role",
+        client: "Client",
+        services: [],
+        problem:"",
+        approach:"",
+        results:"",
+        conclusion:"",
+        repository:""
+    },
+    {
+        id:6,
+        title: "Title",
+        subtitle:"",
+        description : "Description",
+        category: "Category",
+        date: "22/12/2024",
+        year:"2025",
+        image: "/img/website.jpg",
+        images:[
+            "","",""
+        ],
+        introduction: "Introduction",
+        role:"Role",
+        client: "Client",
+        services: [],
+        problem:"",
+        approach:"",
+        results:"",
+        conclusion:"",
+        repository:""
+    },
+    {
+        id:7,
+        title: "Informative Web Page",
+        subtitle:"",
+        description : "Description",
+        category: "Category",
+        date: "22/12/2024",
+        year:"2025",
+        image: "/img/website.jpg",
+        images:[
+            "","",""
+        ],
+        introduction: "Introduction",
+        role:"Role",
+        client: "Client",
+        services: [],
+        problem:"",
+        approach:"",
+        results:"",
+        conclusion:"",
+        repository:""
+    },
+]

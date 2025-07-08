@@ -1,0 +1,17 @@
+{
+  "title": "Productivity Plus",
+  "subtitle": "Full Stack Developer",
+  "buttonText": "text",
+  "dates": "2023 - 2025",
+  "datesfull": "Jun 2023 - Jun 2025",
+  "services": ["Websockets for real-time data transfer", "VideoCall", "Text Recognition (OCR)"],
+  "tools": ["NextJs", "HTML", "PHP","Express", "MongoDB", "Ionos"],
+  "images": ["/logos/ppluslogo.png", "/jobs/pplus.png", "/img/pplusarchitecture.png"],
+  "paragraphs": [
+    "Enhanced performance of legacy systems...",
+    "This system has been designed to optimize and simplify the process of remote hiring and terminations, offering advanced tools that facilitate interaction between candidates and advisors, as well as the efficient management of electronic documents."
+  ],
+  "title2": "Tools & Impact",
+  "contact": "example@gmail.com",
+  "url": "https://github.com/"
+}

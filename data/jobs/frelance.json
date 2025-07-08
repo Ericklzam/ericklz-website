@@ -1,0 +1,18 @@
+{
+    "title": "Freelance Team",
+    "subtitle": "Back-End Developer",
+    "buttonText": "text",
+    "dates": "2023",
+    "datesfull": "Aug 2023 - Dec 2023",
+    "services": ["REST API design", "Payment integration"],
+    "tools": ["NestJS", "Prisma", "PostgreSQL"],
+    "images": ["/logos/freelance.png", "/jobs/musicbull.png"],
+    "paragraphs": [
+        "Delivered robust backend for e-commerce...",
+        "Deployed on scalable architecture..."
+    ],
+    "title2": "What I Delivered",
+    "contact": "",
+    "url": "",
+    "demotext": ""
+}
