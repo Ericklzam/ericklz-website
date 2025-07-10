@@ -5,7 +5,5 @@ export const topRowStacks = [
     { icon: "/stack/phyton.png", label: "Python", desc: "Scripting" },
     { icon: "/stack/react.png", label: "React", desc: "Ui Library" },
     { icon: "/stack/swift.png", label: "Swift", desc: "Deploy" },
-    { icon: "/stack/vercel.svg", label: "Vercel", desc: "Serverless Deployment" },
-    { icon: "/stack/java.png", label: "Java", desc: "Scripting" },
-    { icon: "/stack/git.png", label: "Git", desc: "Scripting" },
+    { icon: "/stack/vercel.svg", label: "Vercel", desc: "Serverless Deployment" }
     ];

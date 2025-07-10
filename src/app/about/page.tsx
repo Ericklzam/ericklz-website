@@ -5,11 +5,12 @@ import Image from "next/image";
 import { faqs } from "../../../data/constants/faqs";
 import { images } from "../../../data/constants/images";
 import { colors } from "../../../data/constants/colors";
-import { topRowStacks } from "../../../data/constants/topstacks";
-import { bottomRowStacks } from "../../../data/constants/bottomstacks";
 import { aboutItems } from "../../../data/constants/aboutitems";
 import Experience from "@/components/about/experience";
 import JobModal from "@/components/dialogs/JobsModal";
+import Stack from "@/components/about/stack";
+import Gallery from "@/components/about/gallery";
+import { habilitiesStack } from "../../../data/constants/habilities";
 
 export default function About() {
   const [isOpen, setIsOpen] = useState(false);
@@ -118,13 +119,13 @@ export default function About() {
         </div>
       </div>
 
-        <div className="bg-[#0E0E0E] p-6 rounded-2xl overflow-hidden">
-        <h2 className="text-center text-2xl font-bold mb-6">Stack</h2>
+      <Stack/>
 
-        {/* Top Row */}
+      <div className="bg-[#0E0E0E] p-6 rounded-2xl overflow-hidden mb-8">
+        <h2 className="text-center text-2xl font-bold mb-6">Habilities</h2>
         <div className="relative overflow-hidden h-28 mb-4">
-        <div className="flex animate-scroll-right whitespace-nowrap gap-4">
-            {topRowStacks.map((item, i) => (
+        <div className="flex justify-center items-center whitespace-nowrap gap-4">
+            {[...habilitiesStack].map((item, i) => (
             <StackItem
                 key={`top-${i}`}
                 icon={item.icon}
@@ -133,70 +134,46 @@ export default function About() {
             />
             ))}
         </div>
+        </div>
+      </div>
+      
+      <div className="min-h-screen bg-[#0E0E0E] text-white px-4 py-8">
+      <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">FAQs</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {faqs.map((faq, index) => {
+          const isOpen = openStates[index];
+          return (
+              <div
+              key={index}
+              onClick={() => toggle(index)}
+              className="bg-[#111111] rounded-xl p-6 cursor-pointer transition-all duration-300"
+              >
+              <div className="flex items-start gap-3 hover:text-[#793d3d] transition-all duration-150">
+                  <span className="text-xl font-bold">
+                  {isOpen ? "✕" : "+"}
+                  </span>
+                  <div className="flex-1">
+                  <h3 className="text-md font-semibold">
+                      {faq.question}
+                  </h3>
+                  <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      isOpen ? "max-h-40 mt-2" : "max-h-0"
+                      }`}
+                  >
+                      <p className="text-sm text-gray-400">
+                      {faq.answer}
+                      </p>
+                  </div>
+                  </div>
+              </div>
+              </div>
+          );
+          })}
+      </div>
+      </div>
 
-        {/* Left Fade */}
-        <div className="absolute top-0 left-0 w-16 h-full z-10 bg-gradient-to-r from-[#0E0E0E] to-transparent pointer-events-none" />
-        {/* Right Fade */}
-        <div className="absolute top-0 right-0 w-16 h-full z-10 bg-gradient-to-l from-[#0E0E0E] to-transparent pointer-events-none" />
-        </div>
-
-        {/* Bottom Row */}
-        <div className="relative overflow-hidden h-28">
-        <div className="flex animate-scroll-left whitespace-nowrap gap-4">
-           {bottomRowStacks.map((item, i) => (
-            <StackItem
-                key={`bottom-${i}`}
-                icon={item.icon}
-                label={item.label}
-                desc={item.desc}
-            />
-            ))}
-        </div>
-
-        {/* Left Fade */}
-        <div className="absolute top-0 left-0 w-16 h-full z-10 bg-gradient-to-r from-[#0E0E0E] to-transparent pointer-events-none" />
-        {/* Right Fade */}
-        <div className="absolute top-0 right-0 w-16 h-full z-10 bg-gradient-to-l from-[#0E0E0E] to-transparent pointer-events-none" />
-        </div>
-        </div>
-
-        <div className="min-h-screen bg-[#0E0E0E] text-white px-4 py-8">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">FAQs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-            {faqs.map((faq, index) => {
-            const isOpen = openStates[index];
-            return (
-                <div
-                key={index}
-                onClick={() => toggle(index)}
-                className="bg-[#111111] rounded-xl p-6 cursor-pointer transition-all duration-300"
-                >
-                <div className="flex items-start gap-3 hover:text-[#793d3d] transition-all duration-150">
-                    <span className="text-xl font-bold">
-                    {isOpen ? "✕" : "+"}
-                    </span>
-                    <div className="flex-1">
-                    <h3 className="text-md font-semibold">
-                        {faq.question}
-                    </h3>
-                    <div
-                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isOpen ? "max-h-40 mt-2" : "max-h-0"
-                        }`}
-                    >
-                        <p className="text-sm text-gray-400">
-                        {faq.answer}
-                        </p>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            );
-            })}
-        </div>
-        </div>
-
-        <div className="bg-[#0E0E0E] text-white py-16 px-4">
+    <div className="bg-[#0E0E0E] text-white py-16 px-4">
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-12">Some cool photos</h2>
       <div className="grid grid-cols-4 grid-rows-3 gap-1 max-w-6xl mx-auto h-[600px]">
         {images.map((img, i) => (
@@ -219,34 +196,7 @@ export default function About() {
 
       {/* Modal */}
       {selectedIndex !== null && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 animate-fadeIn">
-          <button
-            onClick={closeModal}
-            className="absolute top-6 right-6 text-white text-4xl font-bold hover:scale-110 transition"
-          >✕</button>
-          <button
-            onClick={prev}
-            className="absolute left-4 text-white text-6xl font-bold hover:scale-110 transition"
-          >‹</button>
-          <div className="flex flex-col items-center justify-center w-[80vw] h-[80vh] animate-zoomIn">
-            <div className="relative w-full flex-1">
-              <Image
-                key={images[selectedIndex].src}
-                src={images[selectedIndex].src}
-                alt={`img-${selectedIndex}`}
-                fill
-                className="object-contain transition-opacity duration-300"
-              />
-            </div>
-            <p className="mt-4 text-sm text-gray-300 text-center max-w-xl">
-              {images[selectedIndex].description}
-            </p>
-          </div>
-          <button
-            onClick={next}
-            className="absolute right-4 text-white text-6xl font-bold hover:scale-110 transition"
-          >›</button>
-        </div>
+        <Gallery selectedIndex={selectedIndex} images={images} closeModal={closeModal} next={next} prev={prev}/>
       )}
     </div>
     <JobModal isOpen={isOpen} onClose={() => setIsOpen(false)} data={currentData}/>
@@ -255,22 +205,22 @@ export default function About() {
   );
 }
 
+function AboutItem({ name }: { name: string }) {
+  return (
+    <div className="text-sm inline-flex items-center rounded-lg bg-[#262626] hover:bg-[#5B2333] transition-colors cursor-pointer py-2 px-4 text-white">
+      {name}
+    </div>
+  );
+};
+
 function StackItem({ icon, label, desc }: { icon: string; label: string; desc: string }) {
   return (
-    <div className="flex flex-row items-center p-4 bg-[#151515] rounded-lg w-64 flex-shrink-0 gap-4">
+    <div className="flex flex-row items-center p-4 bg-[#151515] rounded-lg w-55 flex-shrink-0 gap-4">
       <Image src={icon} alt={label} width={40} height={40} className="flex-shrink-0" />
       <div className="flex flex-col text-left">
         <p className="font-bold">{label}</p>
         <p className="text-gray-400 text-sm">{desc}</p>
       </div>
-    </div>
-  );
-};
-
-function AboutItem({ name }: { name: string }) {
-  return (
-    <div className="text-sm inline-flex items-center rounded-lg bg-[#262626] hover:bg-[#5B2333] transition-colors cursor-pointer py-2 px-4 text-white">
-      {name}
     </div>
   );
 };

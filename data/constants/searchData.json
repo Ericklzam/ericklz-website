@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Personal Website",
+    "url": "/works/1",
+    "description": "A quick overview of the process."
+  },
+  {
+    "title": "Pictura",
+    "url": "/works/2",
+    "description": "Image Recognition: Visual Search Product."
+  },
+  {
+    "title": "Sentivo",
+    "url": "/works/3",
+    "description": "Real-time Speech Recognition System."
+  },
+  {
+    "title": "Reverie",
+    "url": "/works/4",
+    "description": "Song Recomnedation System."
+  },
+  {
+    "title": "Tool Managment",
+    "url": "/works/5",
+    "description": "Excel Tool Managment for Construction Businesses."
+  },
+  {
+    "title": "Factura",
+    "url": "/works/6",
+    "description": "Descarga y manejo de facturas."
+  },
+  {
+    "title": "Web Page",
+    "url": "/works/7",
+    "description": "Simple Landing Page for a Company."
+  },
+  {
+    "title": "What is SSH?",
+    "url": "/blog/4",
+    "description": "A quick introduction of what is ssh and how to use it."
+  },
+  {
+    "title": "What is Docker?",
+    "url": "/blog/5",
+    "description": "A quick introduction of what is ssh and how to use it."
+  },
+  {
+    "title": "The importance of not getting behind.",
+    "url": "/blog/2",
+    "description": "How AI is impacting our modern life and how to use it wisely."
+  },
+  {
+    "title": "Music",
+    "url": "/blog/3",
+    "description": "Article about music and software."
+  },
+  {
+    "title": "Article 1",
+    "url": "/blog/1",
+    "description": "Description of article 1."
+  },
+  {
+    "title": "FAQs",
+    "url": "/works/2",
+    "description": "Frecuently Asked Questions."
+  }
+]

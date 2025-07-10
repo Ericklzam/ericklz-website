@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { topRowStacks } from "../../../data/constants/topstacks";
-import { bottomRowStacks } from "../../../data/constants/bottomstacks";
 import { aboutItems } from "../../../data/constants/aboutitems";
 import Experience from "../about/experience";
 import JobModal from "../dialogs/JobsModal";
+import Stack from "../about/stack";
 
 export default function About() {
 const [isOpen, setIsOpen] = useState(false);
@@ -52,50 +51,9 @@ const [currentData, setCurrentData] = useState<any>(null);
               <AboutItem key={i} name={item.name} />
             ))}
           </div>
-
         </div>
 
-        <div className="bg-[#0E0E0E] p-6 rounded-2xl overflow-hidden mb-8">
-        <h2 className="text-center text-2xl font-bold mb-6">Stack</h2>
-
-        {/* Top Row */}
-        <div className="relative overflow-hidden h-28 mb-4">
-        <div className="flex animate-scroll-right whitespace-nowrap gap-4">
-            {topRowStacks.map((item, i) => (
-            <StackItem
-                key={`top-${i}`}
-                icon={item.icon}
-                label={item.label}
-                desc={item.desc}
-            />
-            ))}
-        </div>
-
-        {/* Left Fade */}
-        <div className="absolute top-0 left-0 w-16 h-full z-10 bg-gradient-to-r from-[#0E0E0E] to-transparent pointer-events-none" />
-        {/* Right Fade */}
-        <div className="absolute top-0 right-0 w-16 h-full z-10 bg-gradient-to-l from-[#0E0E0E] to-transparent pointer-events-none" />
-        </div>
-
-        {/* Bottom Row */}
-        <div className="relative overflow-hidden h-28">
-        <div className="flex animate-scroll-left whitespace-nowrap gap-4">
-           {bottomRowStacks.map((item, i) => (
-            <StackItem
-                key={`bottom-${i}`}
-                icon={item.icon}
-                label={item.label}
-                desc={item.desc}
-            />
-            ))}
-        </div>
-
-        {/* Left Fade */}
-        <div className="absolute top-0 left-0 w-16 h-full z-10 bg-gradient-to-r from-[#0E0E0E] to-transparent pointer-events-none" />
-        {/* Right Fade */}
-        <div className="absolute top-0 right-0 w-16 h-full z-10 bg-gradient-to-l from-[#0E0E0E] to-transparent pointer-events-none" />
-        </div>
-        </div>
+        <Stack/>
 
         {/* Button */}
         <div className="text-center">
@@ -108,18 +66,6 @@ const [currentData, setCurrentData] = useState<any>(null);
     </div>
   );
 }
-
-function StackItem({ icon, label, desc }: { icon: string; label: string; desc: string }) {
-  return (
-    <div className="flex flex-row items-center p-4 bg-[#151515] rounded-lg w-64 flex-shrink-0 gap-4">
-      <Image src={icon} alt={label} width={40} height={40} className="flex-shrink-0" />
-      <div className="flex flex-col text-left">
-        <p className="font-bold">{label}</p>
-        <p className="text-gray-400 text-sm">{desc}</p>
-      </div>
-    </div>
-  );
-};
 
 function AboutItem({ name }: { name: string }) {
   return (

@@ -5,7 +5,11 @@ import { FiSearch, FiMenu, FiX } from "react-icons/fi";
 import { FaXTwitter, FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 import Image from "next/image";
 
-export default function Navbar() {
+type NavbarProps = {
+  onSearchClick: () => void;
+};
+
+export default function Navbar({ onSearchClick }: NavbarProps) {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -53,15 +57,16 @@ export default function Navbar() {
           <Link href="/blog">Blog</Link>
         </div>
 
-        {/* Search icon (replaces search input) */}
-        <div className="hidden md:flex items-center bg-neutral-700 rounded px-3 py-2 text-gray-300 text-sm w-56">
-          <FiSearch className="mr-2" />
-          <input
-            className="bg-transparent focus:outline-none w-full"
-            type="text"
-            placeholder="Search ..."
-          />
-        </div>
+        {/* Search Icon (opens modal) */}
+        <button
+          onClick={onSearchClick}
+          className="hidden md:flex items-center gap-2 bg-neutral-700 rounded px-4 py-2 text-gray-300 text-sm w-auto justify-center cursor-pointer z-50 transition-opacity duration-300"
+          aria-label="Open search"
+        >
+          <FiSearch className="text-white" />
+          <span className="whitespace-nowrap pr-22">Search ...</span>
+        </button>
+
 
         {/* Social icons */}
         <div className="hidden md:flex gap-3 items-center text-gray-300 text-lg">
