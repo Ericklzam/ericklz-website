@@ -4,15 +4,14 @@
     "buttonText": "text",
     "dates": "2023",
     "datesfull": "Aug 2023 - Dec 2023",
-    "services": ["REST API design", "Payment integration"],
-    "tools": ["NestJS", "Prisma", "PostgreSQL"],
-    "images": ["/logos/freelance.png", "/jobs/musicbull.png"],
+    "services": ["Apis Integration", "Payment integration and Real Money Transactions", "Marketplace" ,"eKYC (Electronic Know Your Customer)"],
+    "tools": ["ReactJs", "Flutter" ,"MySQL" , "AWS"],
+    "images": ["/logos/freelance.png", "/jobs/musicbull.png", "/jobs/musicbull2.png"],
     "paragraphs": [
-        "Delivered robust backend for e-commerce...",
-        "Deployed on scalable architecture..."
+        "I use to work with a developer team who worked on various projects. I was put on a music royalty investment platform that allowed users to buy and trade fractional ownership in music catalogs.",
+        "My main responsibilities were focused on the frontend of the web application, integrating backend APIs, data consistency and smooth user interactions across the platform. Throughout the project, I also worked with services like payment processing and eKYC (Electronic Know Your Customer) by handling tasks related to UI behavior, API responses, and bug fixes. While I wasn’t in charge of implementing these systems from scratch, I gained hands-on experience in how they operate and integrate within a secure, real-money platform"
     ],
     "title2": "What I Delivered",
-    "contact": "",
-    "url": "",
-    "demotext": ""
+    "contact": "benito.lopez.d@gmail.com",
+    "url": "https://musicbull.com/"
 }

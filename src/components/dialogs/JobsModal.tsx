@@ -43,7 +43,6 @@ export default function JobModal({ isOpen, onClose, data }: any) {
           <p className="text-sm">{data.datesfull}</p>
         </div>
 
-        {/* Right: Image */}
         <div className="flex justify-center">
           <img
             src={data.images[0]}
@@ -53,10 +52,9 @@ export default function JobModal({ isOpen, onClose, data }: any) {
         </div>
       </div>
 
-      {/* Date + Tools + Paragraph */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <p className="text-sm text-gray-300 bg-[#262626] p-4 rounded-lg">
+          <p className="text-md text-gray-300 bg-[#5B2333] p-4 rounded-lg">
             {data.paragraphs[0]}
           </p>
         </div>
@@ -78,8 +76,7 @@ export default function JobModal({ isOpen, onClose, data }: any) {
         </div>
 
         <div className="mt-6 flex flex-col p-4 rounded-lg w-full">
-          <h2 className="text-2xl font-semibold mb-4">{data.title}</h2>
-          <p className="text-sm text-gray-400">{data.paragraphs[1]}</p>
+          <p className="text-md text-gray-400">{data.paragraphs[1]}</p>
         </div>
 
         <div className="w-75vh h-80 mt-6 flex items-center justify-center">
@@ -96,12 +93,17 @@ export default function JobModal({ isOpen, onClose, data }: any) {
         </div>
 
         <div className="mt-6 flex flex-row justify-between p-4 rounded-lg w-full">
-          <p>Contact:</p>
+          <div className="flex flex-col">
+            <p>Contact:</p>
+            <p className="text-md text-gray-400">{data.contact}</p>
+          </div>
           <Link
-          href="/contact"
-          className="hidden md:inline-block bg-gray-200 text-black px-4 py-2 rounded font-semibold text-sm hover:bg-white transition whitespace-nowrap"
+            href={data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-block bg-gray-200 text-black px-4 py-2 rounded font-semibold text-sm hover:bg-white transition whitespace-nowrap"
           >
-          Visit their website ↗
+            Visit their website ↗
           </Link>
         </div>
       </div>

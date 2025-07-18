@@ -4,14 +4,14 @@
   "buttonText": "text",
   "dates": "2023 - 2025",
   "datesfull": "Jun 2023 - Jun 2025",
-  "services": ["Websockets for real-time data transfer", "VideoCall", "Text Recognition (OCR)"],
-  "tools": ["NextJs", "HTML", "PHP","Express", "MongoDB", "Ionos"],
+  "services": ["Websockets for real-time data transfer", "VideoCall", "Text Recognition (OCR)", "Single-tenant architecture", "APIs Integration", "Server Domain Managment"],
+  "tools": ["React Native" ,"NextJs", "HTML", "PHP", "Express", "MongoDB", "Ionos"],
   "images": ["/logos/ppluslogo.png", "/jobs/pplus.png", "/img/pplusarchitecture.png"],
   "paragraphs": [
-    "Enhanced performance of legacy systems...",
-    "This system has been designed to optimize and simplify the process of remote hiring and terminations, offering advanced tools that facilitate interaction between candidates and advisors, as well as the efficient management of electronic documents."
+    "I worked on a human resources system where I handled both front-end and back-end development across multiple platforms.",
+    "The goal was to create a unified experience for users through a mobile app, a touchscreen kiosk interface, and a web application. The system covered the full HR workflow, from applicant tracking and interviews to hiring, document management, employee records, and termination processes. We used a single-tenant architecture with replicated instances, which allowed us to offer isolated environments for each client while maintaining code reusability. My work involved building APIs, managing databases, and ensuring seamless integration between modules, always keeping user experience and security as top priorities."
   ],
   "title2": "Tools & Impact",
   "contact": "example@gmail.com",
-  "url": "https://github.com/"
+  "url": "https://hr.productivity-plusnew.com/"
 }

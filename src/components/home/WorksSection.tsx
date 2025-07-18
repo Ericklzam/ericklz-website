@@ -1,45 +1,22 @@
 "use client";
 
 import Image from "next/image";
-
-const works = [
-  {
-    title: "Making Of: Portolfio Website",
-    description: "A quick overview of the process",
-    category: "UI / UX",
-    image: "/img/website.jpg",
-  },
-  {
-    title: "Pictura",
-    description: "Image Recognition: Visual Search Product",
-    category: "Front End, Back End",
-    image: "/images/digitron.jpg",
-  },
-  {
-    title: "Sentivo",
-    description: "Real-time Speech Emotion Recognition System",
-    category: "Deep Learning",
-    image: "/img/sentivo.jpg",
-  },
-  {
-    title: "Title",
-    description: "Descarga y Manejo de Facturas",
-    category: "Front End, Back End",
-    image: "/images/trado.jpg",
-  },
-];
+import { useRouter } from "next/navigation";
+import { works } from "../../../data/constants/works";
 
 export default function WorksPage() {
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-[#0E0E0E] text-white px-4 py-16">
       <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
         Some of my works
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {works.map((work, index) => (
+        {works.slice(0,4).map((work, index) => (
           <div
             key={index}
             className="relative rounded-xl overflow-hidden shadow-lg group bg-[#151515] transition-all duration-500 ease-in-out hover:shadow-[0_0_8px_4px_#5B2333] cursor-pointer h-80"
+            onClick={()=>{router.push(`/works/${work.id}`);}}
           >
             <div className="absolute top-4 left-4 bg-black/60 text-white text-xs px-2 py-1 rounded z-10">
               {work.category}
@@ -58,7 +35,8 @@ export default function WorksPage() {
         ))}
       </div>
       <div className="mt-12 text-center">
-        <button className="border border-gray-400 rounded-full py-3 px-6 hover:bg-white hover:text-black transition cursor-pointer">
+        <button className="border border-gray-400 rounded-full py-3 px-6 hover:bg-white hover:text-black transition cursor-pointer"
+        onClick={()=>{router.push("/works")}}>
           See All Works
         </button>
       </div>

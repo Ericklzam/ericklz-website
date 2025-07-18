@@ -6,12 +6,12 @@
     "datesfull": "Dec 2021 - Jun 2023",
     "services": ["Legacy automation", "Excel macros"],
     "tools": ["VBA", "Excel", "Access"],
-    "images": ["/logos/siecsa.png", "/siecsavba2.png"],
+    "images": ["/logos/siecsa.png", "/jobs/ExcelPreview2.png", "/jobs/cloud.png"],
     "paragraphs": [
-        "Automated reporting tools for finance...",
-        "Reduced manual processing time..."
+        "I worked on internal tool development for a construction company, using Excel, VBA (Visual Basic for Applications), and macros to automate key management tasks. These to reduce manual work and improved accuracy in daily operations.",
+        " One of the tools I developed connected to a cloud-hosted database, enabling real-time updates and centralized control over equipment usage across multiple job sites. I also assisted with network management, helping maintain stable connectivity across offices and remote construction locations. This involved basic troubleshooting, setting up shared drives, and ensuring that cloud systems remained accessible and synchronized."
     ],
-    "title2": "Legacy Project",
-    "contact": "",
-    "url": ""
+    "title2": "",
+    "contact": "mcastillo@siecsajuarez.com",
+    "url": "https://siecsajuarez.com/"
 }

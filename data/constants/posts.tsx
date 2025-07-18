@@ -3,7 +3,7 @@ export const posts = [
     id:1,
     title: "Article 1",
     description: "Description 1.",
-    read: "5-min",
+    read: "5-min read",
     category: "Category",
     introduction:"Sed tincidunt quis justo eu suscipit. Vestibulum consequat vitae mauris vel malesuada. Nullam ut erat in lorem malesuada euismod. Aliquam erat volutpat. Aenean non sem vulputate, tempor lacus nec, tempus erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam et urna sodales augue maximus ultricies. Sed cursus interdum tortor vitae efficitur. Mauris posuere velit nunc, eget malesuada nulla aliquet id. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     titles:["Neque porro quisquam","Sed tincidunt quis justo eu suscipit","Neque porro quisquam"],

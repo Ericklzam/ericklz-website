@@ -13,7 +13,6 @@ export default function Works() {
   const [search, setSearch] = useState("");
   const [activeTag, setActiveTag] = useState("All Articles");
 
-  // ✅ Compute filtered works based on activeTag and search input
   const filteredWorks = useMemo(() => {
     return works.filter((work) => {
       const matchesTag =

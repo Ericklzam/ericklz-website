@@ -87,7 +87,7 @@ export default function Works() {
             <span>Published {data.date}</span>
             <span className="flex items-center gap-1">
               <FiClock className="text-sm" />
-              {data.read} read
+              {data.read}
             </span>
           </div>
 

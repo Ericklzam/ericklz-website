@@ -4,6 +4,7 @@ import Image from "next/image";
 import { MdMessage } from "react-icons/md";
 import { useState } from "react";
 import Notification from "@/components/Notification";
+import { Pattern } from "../../../public/Pattern";
 
 export default function ContactSection() {
   const [form, setForm] = useState({
@@ -64,13 +65,8 @@ export default function ContactSection() {
             <span>Let's Talk</span>
           </div>
           <p className="text-gray-400 text-lg">I'll contact you within 24hrs</p>
-          <div className="w-full h-64 relative rounded-xl overflow-hidden">
-            <Image
-              src="/contact-image.jpg"
-              alt="Contact"
-              fill
-              className="object-cover rounded-xl"
-            />
+          <div className="w-40 md:w-50 flex-shrink-0">
+            <Pattern/>
           </div>
         </div>
 

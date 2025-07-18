@@ -20,6 +20,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   const [data, setData] = useState<Entry[]>([]);
   const searchRef = useRef<HTMLDivElement>(null);
   const [showResults, setShowResults] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
 useEffect(() => {
   if (searchTerm.trim().length > 0) {
@@ -41,6 +42,15 @@ useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   useEffect(() => {
   // Fetch JSON data
@@ -108,7 +118,6 @@ useEffect(() => {
                 </button>
             </div>
 
-            {/* Results List with Animation */}
             <div
                 className={`bg-white rounded-b px-4 overflow-hidden transition-[max-height] duration-300 ease-in-out ${
                 showResults ? "max-h-64 py-3" : "max-h-0 py-0"
@@ -142,6 +151,16 @@ useEffect(() => {
 
 
         </div>
+        )}
+
+        {showScrollTop && (
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-6 right-6 z-[9999] bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition"
+            aria-label="Back to top"
+          >
+            Back to top ↑
+          </button>
         )}
     </>
   );

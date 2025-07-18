@@ -6,10 +6,12 @@ import { aboutItems } from "../../../data/constants/aboutitems";
 import Experience from "../about/experience";
 import JobModal from "../dialogs/JobsModal";
 import Stack from "../about/stack";
+import { useRouter } from "next/navigation";
 
 export default function About() {
-const [isOpen, setIsOpen] = useState(false);
-const [currentData, setCurrentData] = useState<any>(null);
+  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentData, setCurrentData] = useState<any>(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -57,7 +59,8 @@ const [currentData, setCurrentData] = useState<any>(null);
 
         {/* Button */}
         <div className="text-center">
-          <button className="border border-gray-400 rounded-full py-3 px-6 hover:bg-white hover:text-black transition cursor-pointer">
+          <button className="border border-gray-400 rounded-full py-3 px-6 hover:bg-white hover:text-black transition cursor-pointer"
+          onClick={()=>{router.push("/about")}}>
             Know More About Me
           </button>
         </div>
