@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import "./globals.css";
 import { Inter } from "next/font/google";
 import MainLayout from "@/components/MainLayout";
@@ -6,8 +5,8 @@ import MainLayout from "@/components/MainLayout";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata = {
-  title: "Erick López | Portfolio",
-  description: "Software Developer Portfolio",
+  title: "Erick Lopez | Portfolio",
+  description: "Full-Stack Developer Portfolio",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
