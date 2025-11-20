@@ -1,0 +1,78 @@
+/* [project]/src/components/dialogs/ResumeDialog.module.css [app-client] (css) */
+.ResumeDialog-module__b_wNrG__container {
+  display: inline-block;
+  position: relative;
+}
+
+.ResumeDialog-module__b_wNrG__downloadBtn {
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 12px 24px;
+  transition: all .25s;
+}
+
+.ResumeDialog-module__b_wNrG__downloadBtn:hover {
+  color: #000;
+  background: #fff;
+}
+
+.ResumeDialog-module__b_wNrG__dialog {
+  transform-origin: 100% 0;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  background: #1a1a1a;
+  border-radius: 10px;
+  width: 180px;
+  padding: 12px;
+  transition: opacity .25s, transform .25s;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  transform: scale(.9);
+  box-shadow: 0 4px 12px #0006;
+}
+
+.ResumeDialog-module__b_wNrG__dialogOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.ResumeDialog-module__b_wNrG__dialogClosed {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(.9);
+}
+
+.ResumeDialog-module__b_wNrG__option {
+  color: #fff;
+  border-radius: 8px;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  text-decoration: none;
+  transition: all .2s;
+  display: flex;
+}
+
+.ResumeDialog-module__b_wNrG__option:hover {
+  background: #3a3a3a;
+}
+
+.ResumeDialog-module__b_wNrG__language {
+  margin: 0;
+  font-weight: 600;
+}
+
+.ResumeDialog-module__b_wNrG__pronunciation {
+  opacity: .7;
+  margin: 0;
+  font-size: .8rem;
+}
+
+
+/*# sourceMappingURL=src_components_dialogs_ResumeDialog_module_bef9bdba.css.map*/

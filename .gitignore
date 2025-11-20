@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+web/node_modules/
+functions/node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -39,3 +41,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Firebase build output
+functions/lib/
+functions/dist/
