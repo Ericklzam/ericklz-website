@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { works } from "../../../data/constants/works";
+import { projects } from "../../../data/projects/works";
 
 export default function WorksPage() {
   const router = useRouter();
@@ -12,14 +12,14 @@ export default function WorksPage() {
         Some of my works
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        {works.slice(0,4).map((work, index) => (
+        {projects.slice(0,4).map((work, index) => (
           <div
             key={index}
             className="relative rounded-xl overflow-hidden shadow-lg group bg-[#151515] transition-all duration-500 ease-in-out hover:shadow-[0_0_8px_4px_#5B2333] cursor-pointer h-80"
             onClick={()=>{router.push(`/works/${work.id}`);}}
           >
             <div className="absolute top-4 left-4 bg-black/60 text-white text-xs px-2 py-1 rounded z-10">
-              {work.category}
+              {Array.isArray(work.category) ? work.category.join(", ") : work.category}
             </div>
             <Image
               src={work.image}
@@ -29,7 +29,7 @@ export default function WorksPage() {
             />
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/80 to-transparent z-10">
               <h3 className="text-xl font-semibold mb-1">{work.title}</h3>
-              <p className="text-sm text-neutral-300">{work.description}</p>
+              <p className="text-sm text-neutral-300">{work.subtitle}</p>
             </div>
           </div>
         ))}

@@ -1,17 +1,18 @@
 "use client";
-import Image from "next/image";
 import { Pattern } from "../../../public/Pattern";
 import { useRouter } from "next/navigation";
+import ResumeDialog from "../dialogs/ResumeDialog";
 
 export default function HeroSection() {
   const router = useRouter();
   return (
     <section className="min-h-screen flex flex-col md:flex-row items-center justify-around px-6 md:px-12 py-20 bg-[#0E0E0E] text-white">
       <div className="flex flex-col gap-6 max-w-xl">
-        <span className="flex items-center gap-2 text-sm">
+        <span className="flex items-center gap-2 text-sm mt-6 md:mt-0">
           <span className="w-3 h-3 rounded-full bg-green-500"></span>
           Available for Work
         </span>
+
 
         <h1 className="text-4xl md:text-7xl font-bold leading-tight">
           Hi! <br />
@@ -29,9 +30,7 @@ export default function HeroSection() {
           onClick={()=>{router.push("/contact")}}>
             Start a Project
           </button>
-          <button className="flex items-center gap-2 border border-gray-500 px-6 py-3 rounded transition cursor-pointer text-white hover:bg-white hover:text-black">
-            Download Resume
-          </button>
+          <ResumeDialog />
         </div>
       </div>
 

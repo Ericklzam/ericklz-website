@@ -8,10 +8,24 @@ import JobModal from "../dialogs/JobsModal";
 import Stack from "../about/stack";
 import { useRouter } from "next/navigation";
 
+interface JobData {
+  title: string;
+  subtitle: string;
+  dates: string;
+  datesfull: string;
+  services: string[];
+  tools: string[];
+  images: string[];
+  paragraphs: string[];
+  title2: string;
+  contact: string;
+  url: string;
+}
+
 export default function About() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [currentData, setCurrentData] = useState<any>(null);
+  const [currentData, setCurrentData] = useState<JobData | null>(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -41,7 +55,7 @@ export default function About() {
               className="rounded-full mb-4 object-cover"
             />
             <p className="text-gray-200">
-              I believe in people's pontential and hidden talents, sometimes we encase people's skills on what we thought they should have inside their jobs, 
+              I believe in people&apos;s pontential and hidden talents, sometimes we encase people&apos;s skills on what we thought they should have inside their jobs, 
             associations, communities, not realizing that each person has a unique ability that has not fully develop yet, and we as colleagues is our 
             job to help them to know their true pontential.
             </p>
@@ -64,7 +78,13 @@ export default function About() {
             Know More About Me
           </button>
         </div>
-        <JobModal isOpen={isOpen} onClose={() => setIsOpen(false)} data={currentData}/>
+        {currentData && (
+          <JobModal
+            isOpen={isOpen}
+            onClose={() => setIsOpen(false)}
+            data={currentData}
+          />
+        )}
       </div>
     </div>
   );

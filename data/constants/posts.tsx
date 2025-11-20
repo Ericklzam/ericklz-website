@@ -1,10 +1,12 @@
 export const posts = [
   {
     id:1,
-    title: "Article 1",
+    title: "How does social media recommends you stuff.",
     description: "Description 1.",
     read: "5-min read",
-    category: "Category",
+    category: [
+      "Category"
+    ],
     introduction:"Sed tincidunt quis justo eu suscipit. Vestibulum consequat vitae mauris vel malesuada. Nullam ut erat in lorem malesuada euismod. Aliquam erat volutpat. Aenean non sem vulputate, tempor lacus nec, tempus erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam et urna sodales augue maximus ultricies. Sed cursus interdum tortor vitae efficitur. Mauris posuere velit nunc, eget malesuada nulla aliquet id. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
     titles:["Neque porro quisquam","Sed tincidunt quis justo eu suscipit","Neque porro quisquam"],
     date:"12/22/2001",
@@ -18,10 +20,12 @@ export const posts = [
   },
   {
     id:2,
-    title: "Article 2",
+    title: "How AI is impacting our modern life and how to use it wisely.",
     description: "Description 2.",
     read: "5-min",
-    category: "category",
+    category: [
+      "Category"
+    ],
     introduction:"",
     titles:["",""],
     date:"",
@@ -35,10 +39,12 @@ export const posts = [
   },
   {
     id:3,
-    title: "Article 3",
+    title: "Article about music and software.",
     description: "Description 3.",
     read: "5-min",
-    category: "category",
+    category: [
+      "Category"
+    ],
     introduction:"",
     titles:["",""],
     date:"",
@@ -52,10 +58,12 @@ export const posts = [
   },
   {
     id:4,
-    title: "Article 4",
-    description: "Description 5.",
+    title: "What is SSH?",
+    description: "A quick introduction of what is ssh and how to use it.",
     read: "5-min",
-    category: "category",
+    category: [
+      "Category"
+    ],
     introduction:"",
     titles:["",""],
     date:"",
@@ -69,10 +77,12 @@ export const posts = [
   },
   {
     id:5,
-    title: "Article 5",
-    description: "Description 5.",
+    title: "What is Docker?",
+    description: "A quick introduction of what is Docker and how to use it.",
     read: "5-min",
-    category: "category",
+    category: [
+      "Category"
+    ],
     introduction:"",
     titles:["",""],
     date:"",

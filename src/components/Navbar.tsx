@@ -38,7 +38,6 @@ export default function Navbar({ onSearchClick }: NavbarProps) {
       }}
     >
       <div className="flex items-center justify-between w-full max-w-7xl mx-auto bg-[#151515]/60 backdrop-blur-md rounded-none md:rounded-2xl p-4 md:px-8">
-        {/* Logo */}
         <Link href="/" className="w-8 md:w-10 flex-shrink-0">
           <Image
             src="/EMLZ.svg"
@@ -49,7 +48,6 @@ export default function Navbar({ onSearchClick }: NavbarProps) {
           />
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex gap-6 text-gray-300 text-sm items-center">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
@@ -57,18 +55,24 @@ export default function Navbar({ onSearchClick }: NavbarProps) {
           <Link href="/blog">Blog</Link>
         </div>
 
-        {/* Search Icon (opens modal) */}
         <button
           onClick={onSearchClick}
-          className="hidden md:flex items-center gap-2 bg-neutral-700 rounded px-4 py-2 text-gray-300 text-sm w-auto justify-center cursor-pointer z-50 transition-opacity duration-300"
+          className="
+            flex items-center gap-2 rounded px-4 py-2 text-gray-300 text-sm w-auto
+            justify-center cursor-pointer z-50 transition-all duration-300
+            bg-transparent
+            md:bg-neutral-700 
+          "
           aria-label="Open search"
         >
           <FiSearch className="text-white" />
-          <span className="whitespace-nowrap pr-22">Search ...</span>
+          <span className="whitespace-nowrap pr-22 hidden md:inline">
+            Search ...
+          </span>
         </button>
 
 
-        {/* Social icons */}
+
         <div className="hidden md:flex gap-3 items-center text-gray-300 text-lg">
           <a href="https://x.com/ericklz00" aria-label="X" target="_blank" rel="noopener noreferrer">
             <FaXTwitter />
@@ -84,7 +88,6 @@ export default function Navbar({ onSearchClick }: NavbarProps) {
           </a>
         </div>
 
-        {/* Let’s Talk button */}
         <Link
           href="/contact"
           className="hidden md:inline-block bg-gray-200 text-black px-4 py-2 rounded font-semibold text-sm hover:bg-white transition whitespace-nowrap"
@@ -92,7 +95,6 @@ export default function Navbar({ onSearchClick }: NavbarProps) {
           Let&apos;s Talk ↗
         </Link>
 
-        {/* Mobile Hamburger */}
         <button
           className="md:hidden text-gray-300 text-2xl"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -102,7 +104,6 @@ export default function Navbar({ onSearchClick }: NavbarProps) {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="flex flex-col items-center bg-[#151515]/60 backdrop-blur-md rounded-none md:rounded-2xl text-gray-300 py-8 md:px-8">
           <Link

@@ -17,7 +17,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState<Entry[]>([]);
-  const [data, setData] = useState<Entry[]>([]);
+  //const [data, setData] = useState<Entry[]>([]);
   const searchRef = useRef<HTMLDivElement>(null);
   const [showResults, setShowResults] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -52,15 +52,15 @@ useEffect(() => {
   }, []);
 
 
-  useEffect(() => {
-  // Fetch JSON data
-  const fetchData = async () => {
-    const res = await fetch("/searchData.json");
-    const json = await res.json();
-    setData(json);
-  };
-  fetchData();
-}, []);
+  /*useEffect(() => {
+    // Fetch JSON data
+    const fetchData = async () => {
+      const res = await fetch("/searchData.json");
+      const json = await res.json();
+      setData(json);
+    };
+    fetchData();
+  }, []);*/
 
   /*useEffect(() => {
   const filtered = data.filter((entry) =>

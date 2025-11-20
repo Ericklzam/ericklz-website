@@ -23,6 +23,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 @keyframes scrollRight {
@@ -97,4 +98,13 @@ body {
 
 .animate-slideRight {
   animation: slideRight 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+.animate-marquee {
+  animation-duration: 15s;
+}
+.animate-marquee-reverse {
+  animation-duration: 15s;
+}
 }

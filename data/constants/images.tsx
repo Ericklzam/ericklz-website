@@ -1,5 +1,5 @@
 export const images = [
-  { src: "/img/sky.jpg", description: "Traversing through the clouds." },
+  { src: "/img/sky.jpg", description: "In the clouds." },
   { src: "/img/Church.jpg", description: "The Metropolitan Cathedral of Mexico from distance." },
   { src: "/img/duck.jpg", description: "A cool duck from the central park of my hometown." },
   { src: "/img/wero2.jpg", description: "Doggy." },

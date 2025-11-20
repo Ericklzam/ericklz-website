@@ -1,0 +1,74 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.downloadBtn {
+  background: transparent;
+  color: white;
+  border: 1px solid #555;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.downloadBtn:hover {
+  background: white;
+  color: black;
+}
+
+.dialog {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 12px;
+  width: 180px;
+  transform-origin: top right;
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.dialogOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.dialogClosed {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.9);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.option:hover {
+  background: #3a3a3a;
+}
+
+.language {
+  font-weight: 600;
+  margin: 0;
+}
+
+.pronunciation {
+  font-size: 0.8rem;
+  margin: 0;
+  opacity: 0.7;
+}

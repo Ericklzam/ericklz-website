@@ -1,11 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import maypretecData from "../../../data/jobs/maypretec.json";
 import pplusData from "../../../data/jobs/pplus.json";
 import freelanceData from "../../../data/jobs/frelance.json";
 import siecsaData from "../../../data/jobs/siecsa.json";
-import JobModal from "../dialogs/JobsModal";
 
 const experiences = [maypretecData, pplusData, freelanceData, siecsaData];
 

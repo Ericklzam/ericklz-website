@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { MdMessage } from "react-icons/md";
 import { useState } from "react";
 import Notification from "@/components/Notification";
@@ -32,20 +31,33 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...form }),
-    });
+    try {
+      const res = await fetch("https://us-central1-ericklzweb.cloudfunctions.net/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    const data = await res.json();
-    if (res.ok) {
-      setNotification({ message: "E-mail sent!", type: "success" });
-      setForm({ name: "", email: "", subject: "", message: "" }); // clear form
-    } else {
-      setNotification({ message: "Failed to send message: " + data.message, type: "error" });
+      const data = await res.json();
+
+      if (res.ok) {
+        setNotification({ message: "✅ E-mail sent successfully!", type: "success" });
+        setForm({ name: "", email: "", subject: "", message: "" }); // clear form
+      } else {
+        setNotification({
+          message: "❌ Failed to send message: " + (data.message || "Unknown error"),
+          type: "error",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      setNotification({
+        message: "❌ Network error — please try again later.",
+        type: "error",
+      });
     }
   };
+
 
 
   return (
@@ -62,9 +74,9 @@ export default function ContactSection() {
         <div className="flex-1 flex flex-col gap-6 justify-center">
           <div className="flex items-center gap-3 text-white text-3xl font-bold">
             <MdMessage className="text-[#5B2333]" />
-            <span>Let's Talk</span>
+            <span>Let&apos;s Talk</span>
           </div>
-          <p className="text-gray-400 text-lg">I'll contact you within 24hrs</p>
+          <p className="text-gray-400 text-lg">I&apos;ll contact you within 24hrs</p>
           <div className="w-40 md:w-50 flex-shrink-0">
             <Pattern/>
           </div>
